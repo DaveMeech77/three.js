@@ -58,7 +58,7 @@
 
 				const loadPointCloud = function ( file ) {
 
-					loader.load( './models/pcd/' + file, function ( points ) {
+					loader.load('./models/pcd/' + file, function ( points ) {
 
 						points.geometry.center();
 						points.geometry.rotateX( Math.PI );
@@ -67,9 +67,9 @@
 
 						const gui = new GUI();
 
-						gui.add( points.material, 'size', 0.001, 0.01 ).onChange( render );
+						gui.add( points.material, 'size', 0.001, 0.01 ).onChange( render);
 						gui.addColor( points.material, 'color' ).onChange( render );
-						gui.add( points, 'name', [
+						gui.add( points, 'name',[
 							'ascii/simple.pcd',
 							'binary/Zaghetto.pcd',
 							'binary/Zaghetto_8bit.pcd',
@@ -77,7 +77,7 @@
 						] ).name( 'type' ).onChange( e => {
 
 							gui.destroy();
-							scene.remove( points );
+							scene.remove(point);
 							loadPointCloud( e );
 			
 						} );
@@ -110,8 +110,8 @@
 
 				renderer.render( scene, camera );
 
-			}
-
-		</script>
-	</body>
-</html>
+			    }
+     
+		   </script>
+	  </body>
+  </html>
